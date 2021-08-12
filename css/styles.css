@@ -291,9 +291,12 @@ img {
   align-items: center;
   width: 18px;
   height: 18px;
-}
-.close-icon{
   fill: #000;
+  transition: fill 250ms var(--time);
+  
+}
+.close-icon-box:hover{
+  fill: var(--accent-color);
 }
 /* Оформление формы внутри */
 
@@ -312,15 +315,25 @@ img {
   position: relative;
   
 }
+
 .form-field input{
   margin: 0;
-  padding: 11px 12px;
+  padding: 11px 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
   border-radius: 4px;
+
+  transition: border 250ms var(--time);
+}
+.form-field input:hover,
+.form-field input:focus{
+  border: 1px solid var(--accent-color); 
 }
 
+.form-input:focus + .form-icon-box .form-icon,
+.form-input:hover + .form-icon-box .form-icon{ 
+  fill: var(--accent-color);
+}
 .form-icon-box{
   position: absolute;
   top: 25px;
@@ -332,21 +345,28 @@ img {
   height: 18px;
   margin-right: 12px;
   
-  outline: 1px solid red;
 }
 .form-icon{
   fill: var(--primary-text-color);
+  transition: fill 250ms var(--time);
 }
+
 
 
 .form-field textarea{
   display: block;
   width: 100%;
-  padding: 12px 16px;
+  padding: 13px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
   resize: none;
+
+  transition: border 250ms var(--time);
+}
+.form-field textarea:hover,
+.form-field textarea:focus {
+  border: 1px solid var(--accent-color);
 }
 .form-field textarea::placeholder{
   font-family: Roboto;
@@ -398,9 +418,7 @@ img {
   transition: transform 250ms var(--time);
 }
 
-.checkbox:checked~.label {
-  transform: translateX(20px);
-}
+
 .send-btn{
   display: flex;
   padding: 10px 55px 10px 56px;
