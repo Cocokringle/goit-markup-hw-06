@@ -37,7 +37,13 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+/* Remove outline on the forms and links */
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
